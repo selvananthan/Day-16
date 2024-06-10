@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1 id="countdown"></h1>
+
+    <script>
+        function displayCountdown(number, callback) {
+            document.getElementById('countdown').innerText = number;
+            setTimeout(callback, 1000);
+        }
+
+        displayCountdown(10, function() {
+            displayCountdown(9, function() {
+                displayCountdown(8, function() {
+                    displayCountdown(7, function() {
+                        displayCountdown(6, function() {
+                            displayCountdown(5, function() {
+                                displayCountdown(4, function() {
+                                    displayCountdown(3, function() {
+                                        displayCountdown(2, function() {
+                                            displayCountdown(1, function() {
+                                                setTimeout(function() {
+                                                    document.getElementById('countdown').innerText = "Happy Independence Day";
+                                                    document.getElementById('countdown').style.animation = 'none'; // Stop the pulse animation
+                                                    document.getElementById('countdown').style.transform = 'scale(1)'; // Reset scale
+                                                }, 1000);
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
